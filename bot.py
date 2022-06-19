@@ -41,3 +41,8 @@ async def remove(ctx, name):
             json.dump(data.__dict__, f)
         await ctx.send(f'Removed {name} from the allowed users')
     else: await ctx.send('You are not allowed to use this command')
+
+token = None
+with open('secret.txt', 'r') as f:
+    token = f.read()
+bot.run(token)
